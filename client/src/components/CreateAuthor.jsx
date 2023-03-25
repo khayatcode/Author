@@ -34,7 +34,7 @@ const CreateAuthor = (props) => {
   return (
 
     <div className='container mt-3 col-6'>
-        { message? <h1>{message}</h1> : <h1>Add Author </h1>
+        { message? <h1>{message}</h1> : <h1>Add New Author</h1>
         }
         <form onSubmit={onSubmitHandler}>
             <div className='form-floating mt-3'>
