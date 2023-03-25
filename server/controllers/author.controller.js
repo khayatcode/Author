@@ -13,14 +13,16 @@ module.exports.createAuthor = (request, response) => {
 module.exports.allAuthor = (request, response) => {
     Author.find({})
         .then(author => response.json(author))
-        .catch(err => response.json(err));
+        .catch(err => response.status(400).json(err));
+
 }
 
 //Display One
 module.exports.oneAuthor = (request, response) => {
     Author.findById({_id: request.params.id})
         .then(author => response.json(author))
-        .catch(err => response.json(err));
+        .catch(err => response.status(400).json(err));
+
 }
 
 // Edit One
@@ -36,5 +38,6 @@ module.exports.editAuthor = (request, response) => {
 module.exports.deleteAuthor = (request, response) => {
     Author.findByIdAndDelete({_id: request.params.id})
         .then(author => response.json(author))
-        .catch(err => response.json(err));
+        .catch(err => response.status(400).json(err));
+
 }

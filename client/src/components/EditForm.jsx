@@ -10,6 +10,7 @@ import DeleteButton from './DeleteButton';
 const EditForm = (props) => {
     const {id} = useParams();
     const [author, setAuthor] = useState({})
+    const [error, setError] = useState()
     const [loaded, setLoaded] = useState(false)
     const navigate = useNavigate()
 
@@ -24,6 +25,7 @@ const EditForm = (props) => {
             .catch(err => {
                 console.log(err)
                 console.log("Error")
+                setError("Author Not Found Using ID")
             }
                 )
     }, [])
@@ -41,6 +43,11 @@ const EditForm = (props) => {
 
   return (
     <div>
+        {
+            error && (
+                <h1 className='text-danger'>{error}</h1>
+            )
+        }
         {
             loaded && (
                 <>

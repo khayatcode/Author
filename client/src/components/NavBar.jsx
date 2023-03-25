@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
 
   return (
-    // Create A navbar with links to the following routes: create new author and displayAll
     <div className='container'>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
